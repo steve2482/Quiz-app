@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Flags of Racing Quiz</title>
-	<link rel="stylesheet" type="text/css" href="JS/app.js">
+	
 	<link rel="stylesheet" type="text/css" href="styles/style.css">
 </head>
 <body>
@@ -15,41 +15,36 @@
 	
 	<div class="container">
 		<section class= "questionBox">
-			<h3 class= "number">Question 1.</h3>
-			<p class= "question">What does each of these flags mean to a driver while competing in a race?(select all that apply)</p>
+			<h3 class= "question">What does each of these flags mean to a driver while competing in a race?(select all that apply)</h3>
+			<p class= "questionNumber">#1 Green Flag</p>
 		</section>
 	</div>
 
 	<div class="container">
 		<section class= imageBox>
-			<img class= flag src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Auto_Racing_Green.svg/800px-Auto_Racing_Green.svg.png">
+			<img class= flag src="http://s3.motoringfile.com.s3.amazonaws.com/wp-content/uploads/2015/07/Race-Duncan.jpg">
 		</section>
 	</div>
 
 	<div class="container">
 		<section class= answerBox>
 			<form>
-				<input type="checkbox" name="Hazard"> End of Hazard<br>
-				<input type="checkbox" name="Restart"> Restart of Race<br>
-				<input type="checkbox" name="Start"> Start of Race<br>
-				<input type="checkbox" name="Pit"> Pit Lane Open<br>
+				<label><input type="checkbox" name="Hazard"> End of Hazard</label><br>
+				<label><input type="checkbox" name="Restart"> Restart of Race</label><br>
+				<label><input type="checkbox" name="Start"> Start of Race</label><br>
+				<label><input type="checkbox" name="Pit"> Pit Lane Open</label><br>
 			</form>
 		</section>
 	</div>
 
 	
-	<div class="container feedback">
-		<div class="row">
-			<div class="col-lg-6">
-				<h6 class="correct"># Correct<span class="numCorrect"></span></h6>
-			</div>
-			<div class="col-lg-6">
-				<h6 class="wrong"># Incorrect<span class="=numWrong"></span></h6>
-			</div>
-		</div>
+	<div class="container feedback">			
+		<h6 class="correct"># Correct<span class="numCorrect"> 0</span></h6>	
+		<h6 class="wrong"># Incorrect<span class="=numWrong"> 0</span></h6>		
 	</div>	
 	
 
-	<script   src="://code.jquery.com/jquery-2.2.4.js"   integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="   crossorigin="anonymous"></script>
+	<script   src="http://code.jquery.com/jquery-2.2.4.js"   integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="   crossorigin="anonymous"></script>
+	<script type="text/javascript" src="JS/app.js">
 </body>
 </html>
