@@ -1,50 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>Flags of Racing Quiz</title>
-	
-	<link rel="stylesheet" type="text/css" href="styles/style.css">
-</head>
-<body>
-	<div class="contatiner">
-		<section class= "quizName">
-			<h1>The Flags of Motorsport Quiz</h1>
-		</section>
-	</div>
-	
-	<div class="container">
-		<section class= "questionBox">
-			<h3 class= "question">What does each of these flags mean to a driver while competing in a race?(select all that apply)</h3>
-			<p class= "questionNumber">#1 Green Flag</p>
-		</section>
-	</div>
-
-	<div class="container">
-		<section class= imageBox>
-			<img class= flag src="http://s3.motoringfile.com.s3.amazonaws.com/wp-content/uploads/2015/07/Race-Duncan.jpg">
-		</section>
-	</div>
-
-	<div class="container">
-		<section class= answerBox>
-			<form>
-				<label><input type="checkbox" name="Hazard"> End of Hazard</label><br>
-				<label><input type="checkbox" name="Restart"> Restart of Race</label><br>
-				<label><input type="checkbox" name="Start"> Start of Race</label><br>
-				<label><input type="checkbox" name="Pit"> Pit Lane Open</label><br>
-			</form>
-		</section>
-	</div>
-
-	
-	<div class="container feedback">			
-		<h6 class="correct"># Correct<span class="numCorrect"> 0</span></h6>	
-		<h6 class="wrong"># Incorrect<span class="=numWrong"> 0</span></h6>		
-	</div>	
-	
-
-	<script   src="http://code.jquery.com/jquery-2.2.4.js"   integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="   crossorigin="anonymous"></script>
-	<script type="text/javascript" src="JS/app.js">
-</body>
+	<head>
+		<meta charset="UTF-8">
+		<title>Flags of Racing Quiz</title>
+		
+		<link rel="stylesheet" type="text/css" href="styles/style.css">
+	</head>
+	<body>
+		<div class="container">
+			<section class= "quizName">
+				<h1>The Flags of Motorsport Quiz</h1>
+			</section>
+			<section class= "questionBox">
+				<h3 class= "question">Welcom to the Flags of Motorsport Quiz. Do you know the meaing behind each flag that is waving at a starter stand or corner station? Let's find out!! Click Begin to start the quiz. Keep in mind there may be more than one correct answer for each question. Good Luck!!</h3>
+				<div class="beginContainer">
+				<form>
+					<input class="beginButton" type="submit" value="Begin">
+				</form>
+				<p class= "questionNumber">
+				<span class="number">Question #</span> <span class="flagDescription">Flag Description</span>
+				</p>
+			</section>
+			<section class= imageBox>
+				<img class= flag src="http://s3.motoringfile.com.s3.amazonaws.com/wp-content/uploads/2015/07/Race-Duncan.jpg">
+			</section>
+			<section class= answerBox>
+				<form class="answerForm">
+					<label><input class="answer" type="checkbox" name="Answer1"> Answer 1</label><br>
+					<label><input class="answer" type="checkbox" name="Answer2"> Answer 2</label><br>
+					<label><input class="answer" type="checkbox" name="Answer3"> Answer 3</label><br>
+					<label><input class="answer" type="checkbox" name="Answer4"> Answer 4</label><br>
+					<div class="submitContainer">
+						<input class= "submitButton" type="submit" value="Submit">
+					</div>
+				</form>
+			</section>
+		<div class="container feedback">
+			<h6 class="correct"># Correct<span class="numCorrect"> 0</span></h6>
+			<h6 class="wrong"># Incorrect<span class="=numWrong"> 0</span></h6>
+		</div>
+		
+		<script src="http://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
+		<script src="JS/app.js"></script>
+	</body>
 </html>
