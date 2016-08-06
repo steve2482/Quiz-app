@@ -12,6 +12,7 @@ $(document).ready(function () {
                  {"id": 10,"question": "Yellow and Red Stripes", "options": { "answer1": "Debris on Track", "answer2": "Oil on Track", "answer3": "Rain on This portion of the Track", "answer4": "Disqualified"}}],
     correct: 0,
     incorrect: 0,
+    currentQuestion: 0,
   };
   
 
@@ -27,12 +28,12 @@ $(document).ready(function () {
     $('.answerBox').show();
     $('.feedback').show();
     $('.beginButton').hide();
-    $('.number').text(NewQuiz.questions[0].id);
+    $('.number').text(NewQuiz.questions[NewQuiz.currentQuestion].id);
     $('.numCorrect').text(NewQuiz.correct);
     $('.numWrong').text(NewQuiz.incorrect);
-    $('.flagDescription').text(NewQuiz.questions[0].question);
+    $('.flagDescription').text(NewQuiz.questions[NewQuiz.currentQuestion].question);
     for(var key in options) {
-      $("." + key).text(NewQuiz.questions[0].options[key]);
+      $("." + key).text(NewQuiz.questions[NewQuiz.currentQuestion].options[key]);
       }
 
   // User Answers Question #1 and Question #2 Appears
@@ -41,43 +42,21 @@ $(document).ready(function () {
     $('.submitButton').click(function(event) {
       if (document.getElementById('Answer4').checked) {
         alert("Correct!");
-        NewQuiz.correct = NewQuiz.correct + 1;
+        NewQuiz.correct ++;        
       } else {
         alert("Incorrect")
-        NewQuiz.incorrect = NewQuiz.incorrect +1;
+        NewQuiz.incorrect ++;        
       }
-      $('.number').text(NewQuiz.questions[1].id);
-      $('.flagDescription').text(NewQuiz.questions[1].question);
+      NewQuiz.currentQuestion++
+      $('.number').text(NewQuiz.questions[NewQuiz.currentQuestion].id);
+      $('.flagDescription').text(NewQuiz.questions[NewQuiz.currentQuestion].question);
       $(".flag").attr("src", "http://i.imgur.com/GOt4x.jpg");
       for(var key in options) {
-        $("." + key).text(NewQuiz.questions[1].options[key]);
+        $("." + key).text(NewQuiz.questions[NewQuiz.currentQuestion].options[key]);
       };
       $('.numCorrect').text(NewQuiz.correct);
       $('.numWrong').text(NewQuiz.incorrect);
       $('.answer').attr('checked', false);      
     });
-
-    // User Answers Question #2 and Question #3 Appears
-
-    $('.submitButton').click(function(event) {
-      if (document.getElementById('Answer1').checked) {
-        alert("Correct!");
-        NewQuiz.correct = NewQuiz.correct + 1;
-      } else {
-        alert("Incorrect")
-        NewQuiz.incorrect = NewQuiz.incorrect +1;
-      }
-      $('.number').text(NewQuiz.questions[2].id);
-      $('.flagDescription').text(NewQuiz.questions[2].question);
-      $(".flag").attr("src", "https://thefinallap.files.wordpress.com/2012/06/nascar-trucks-red-flag-dover.jpg?w=572");
-      for(var key in options) {
-        $("." + key).text(NewQuiz.questions[2].options[key]);
-      };
-      $('.numCorrect').text(NewQuiz.correct);
-      $('.numWrong').text(NewQuiz.incorrect);
-      $('.answer').attr('checked', false);      
-    });
-
-
   }); 
 });
