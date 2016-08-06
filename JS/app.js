@@ -1,6 +1,6 @@
 $(document).ready(function () {
 	var Quiz = {
-		questions: [ {"id": 1, "question": "Green Flag", "options": {"answer1": "Start of the Race", "answer2": "End of Hazard", "answer3": "Restart of the Race", "answer4": "All of the Above", "correct": "All of the Above"}},
+		questions: [ {"id": 1, "question": "Green Flag", "options": {"answer1": "Start of the Race", "answer2": "End of Hazard", "answer3": "Restart of the Race", "answer4": "All of the Above", "right": "All of the Above"}},
                  {"id": 2, "question": "Yellow Flag", "options": {"answer1": "Full Course Caution", "answer2": "Slow Down, Red Flag at Next Station", "answer3" : "Local Caution", "answer4": "Warning"}},
                  {"id": 3, "question": "Red Flag", "options": { "answer1": "Disqualified", "answer2": "Pit Lane Closed", "answer3": "Race is Over", "answer4": "Race is being Stopped"}},
                  {"id": 4, "question": "White Flag", "options": { "answer1": "Final Lap", "Answer2": "Debris on Track", "answer3": "Return to the Pits for a Penalty", "answer4": "Disqualified"}},
@@ -34,31 +34,32 @@ $(document).ready(function () {
     $('.flagDescription').text(NewQuiz.questions[NewQuiz.currentQuestion].question);
     for(var key in options) {
       $("." + key).text(NewQuiz.questions[NewQuiz.currentQuestion].options[key]);
-      };
-
+      }
+  
   // User Answers Question #1 and Question #2 Appears
 
 
-    $('.submitButton').click(function(event) {
-      function validateForm() {
-       var userInput = document.forms[".answerForm"][".answer"].value;
-        if (userInput == NewQuiz.questions[NewQuiz.currentQuestion].options.correct) {
-        alert("Correct!");
-        NewQuiz.correct ++;        
-      } else {
-        alert("Incorrect")
-        NewQuiz.incorrect ++;        
-      };
-      NewQuiz.currentQuestion++;
-      $('.number').text(NewQuiz.questions[NewQuiz.currentQuestion].id);
-      $('.flagDescription').text(NewQuiz.questions[NewQuiz.currentQuestion].question);
-      $(".flag").attr("src", "http://i.imgur.com/GOt4x.jpg");
-      for(var key in options) {
-        $("." + key).text(NewQuiz.questions[NewQuiz.currentQuestion].options[key]);
-      };
-      $('.numCorrect').text(NewQuiz.correct);
-      $('.numWrong').text(NewQuiz.incorrect);
-      $('.answer').attr('checked', false);      
+    $('.submitButton').click(function(event) {     
+     var userInput = $('.answer:checked').next('span').valueOf().toString();
+     console.log(userInput)
+     console.log(NewQuiz.questions[NewQuiz.currentQuestion].options.right)
+      if (userInput == NewQuiz.questions[NewQuiz.currentQuestion].options.right) {
+      alert("Correct!");
+      NewQuiz.correct ++;        
+    } else {
+      alert("Incorrect")
+      NewQuiz.incorrect ++;        
+    };      
+    NewQuiz.currentQuestion++;
+    $('.number').text(NewQuiz.questions[NewQuiz.currentQuestion].id);
+    $('.flagDescription').text(NewQuiz.questions[NewQuiz.currentQuestion].question);
+    $(".flag").attr("src", "http://i.imgur.com/GOt4x.jpg");
+    for(var key in options) {
+      $("." + key).text(NewQuiz.questions[NewQuiz.currentQuestion].options[key]);
     };
-  }); 
+    $('.numCorrect').text(NewQuiz.correct);
+    $('.numWrong').text(NewQuiz.incorrect);
+    $('.answer').attr('checked', false);      
+    });
+  });  
 });
