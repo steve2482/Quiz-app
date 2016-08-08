@@ -22,7 +22,7 @@ $(document).ready(function () {
     correct: 0,
     incorrect: 0,
     currentQuestion: 0,
-  };
+  }
   
 
   // User Clicks Begin Button, First Question Appears
@@ -52,15 +52,26 @@ $(document).ready(function () {
      var userInput = $('.answer:checked').next('span').text();
      console.log(userInput)
      console.log(NewQuiz.questions[NewQuiz.currentQuestion].options.right)
-      if (userInput == NewQuiz.questions[NewQuiz.currentQuestion].options.right) {
+      if (NewQuiz.currentQuestion < 9 && userInput == NewQuiz.questions[NewQuiz.currentQuestion].options.right) {
       alert("Correct!");
-      NewQuiz.correct ++;        
-    } else {
+      NewQuiz.correct++;
+    }
+      else if (NewQuiz.currentQuestion == 9 && userInput == NewQuiz.questions[NewQuiz.currentQuestion].options.right) {
+        // alert("Correct!");
+        NewQuiz.correct++;
+        alert("You scored a " + NewQuiz.correct / 10 * 100)
+      }
+      else if (NewQuiz.currentQuestion == 9) {
+        alert("Incorrect")
+        NewQuiz.incorrect++
+        alert("You scored a " + NewQuiz.correct / 10 * 100)
+      }        
+      else {
       alert("Incorrect")
-      NewQuiz.incorrect ++;        
+      NewQuiz.incorrect++;        
     };
     $('.numCorrect').text(NewQuiz.correct);
-    $('.numWrong').text(NewQuiz.incorrect);      
+    $('.numWrong').text(NewQuiz.incorrect);         
     NewQuiz.currentQuestion++;
     $('.number').text(NewQuiz.questions[NewQuiz.currentQuestion].id);
     $('.flagDescription').text(NewQuiz.questions[NewQuiz.currentQuestion].question);
@@ -68,7 +79,8 @@ $(document).ready(function () {
     for(var key in options) {
       $("." + key).text(NewQuiz.questions[NewQuiz.currentQuestion].options[key]);
     };    
-    $('.answer').attr('checked', false);      
-    });
-  });  
+    $('.answer').attr('checked', false);
+
+    });    
+  });   
 });
