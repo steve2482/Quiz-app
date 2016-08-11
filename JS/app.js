@@ -128,18 +128,22 @@ $(document).ready(function () {
       $('.answer-feedback').text("Correct!!")
       NewQuiz.correct++;
     } else if (NewQuiz.currentQuestion == 9 && userInput == NewQuiz.questions[NewQuiz.currentQuestion].options.right) {
-      // alert("Correct!");
+      $('.modal').show();
       NewQuiz.correct++;
-      alert("You scored a " + NewQuiz.correct / 10 * 100)
+      $('.answer-feedback').text("Correct! Your final score is a " + NewQuiz.correct / 10 * 100);            
     } else if (NewQuiz.currentQuestion == 9) {
-      alert("Incorrect")
+      $('.modal').show();
       NewQuiz.incorrect++
-      alert("You scored a " + NewQuiz.correct / 10 * 100)
+      $('.answer-feedback').text("Incorrect, Your final score is a " + NewQuiz.correct / 10 * 100);     
     } else {
-      alert("Incorrect")
-      NewQuiz.incorrect++;        
+      $('.modal').show();
+      NewQuiz.incorrect++;
+      $('.answer-feedback').text("Incorrect")        
     }
+  });  
+    
   $('.ok-button').click(function(event) {
+    console.log(NewQuiz.currentQuestion)
     $('.modal').hide();  
     $('.numCorrect').text(NewQuiz.correct);
     $('.numWrong').text(NewQuiz.incorrect);         
@@ -152,5 +156,5 @@ $(document).ready(function () {
     }
     $('.answer').attr('checked', false); 
     });
-  });     
+       
 });

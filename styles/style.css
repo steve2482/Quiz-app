@@ -28,7 +28,7 @@ body {
 	display: none;
 }
 
-.beginButton, .submitButton, .ok-Button {
+.beginButton, .submitButton, .ok-button {
 	border-radius: 10px;
 	padding: 10px 20px;
 	background-color: green;
@@ -127,12 +127,13 @@ label {
 }
 
 .modal-content {
-	background-color: grey;
+	background-color: #676E70;
 	margin: 15% auto;
 	padding: 5px;
-	width: 100px;
-	height: 75px;
-	border-radius: 25px;
+	width: 200px;
+	height: 150px;
+	border: 1px solid black;
+	border-radius: 15px;
 }
 
 .feedback-inline {
