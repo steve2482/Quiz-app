@@ -22,7 +22,7 @@
 				</p>
 			</section>
 			<section class= imageBox>
-				<img class= flag src="http://s3.motoringfile.com.s3.amazonaws.com/wp-content/uploads/2015/07/Race-Duncan.jpg">
+				<img class= "flag" src="">
 			</section>
 			<section class= answerBox>
 				<form class="answerForm">
@@ -34,10 +34,18 @@
 						<input class= "submitButton" type="button" value="Submit">
 					</div>
 				</form>
-			</section>
-		<div class="container feedback">
-			<h6 class="correct"># Correct <span class="numCorrect"></span></h6>
-			<h6 class="wrong"># Incorrect <span class="numWrong"></span></h6>
+			</section>		
+			<div class="modal">
+				<div class="modal-content">
+					<p class="answer-feedback"></p>
+					<input class="OK-button" type="button" value="OK">
+				</div>
+			</div>
+			<div class="feedback">
+				<div class="feedback-inline">			
+					<h6>#Correct <span class="numCorrect"></span> #Incorrect <span class="numWrong"></span></h6>
+				</div>
+			</div>
 		</div>
 		
 		<script src="http://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>

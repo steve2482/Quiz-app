@@ -1,3 +1,6 @@
+@font-face { font-family: Ferro Rosso; src: url('../FerroRosso.ttf'); }
+@font-face { font-family: Speed; src: url('../speed.ttf'); }
+
 html, body {
 	height: 100%;
 }
@@ -5,16 +8,46 @@ html, body {
 html {
 	display: table;
 	margin: auto;
+	background-image: url(https://charlestolman.files.wordpress.com/2011/07/maclaren_part.jpg);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-attachment: fixed;
+	background-size: cover;
 }
 
 body {
 	display: table-cell;
 	vertical-align: middle;
 	text-align: center;
+	color: white;
+	font-family: "Speed", Serif;
+	letter-spacing: 1px;
 }
 
 .imageBox, .answerBox, .feedback {
 	display: none;
+}
+
+.beginButton, .submitButton, .ok-Button {
+	border-radius: 10px;
+	padding: 10px 20px;
+	background-color: green;
+	font-family: "Speed", Serif;
+	cursor: pointer;
+}
+	
+.quizName {
+	padding-top: 10px;	
+	font-size: 2em;
+	font-family: "Ferro Rosso", Serif;
+}
+
+.questionBox {	
+	padding-bottom: 20px;
+}
+
+.beginButton {
+	margin-top: 10px;
 }
 
 .questionNumber {
@@ -23,15 +56,24 @@ body {
 
 .container {
 	width: 900px;
-	border: .5px solid grey;	
+	background-color: black;
+	border-radius: 25px;	
 }
 
 .beginContainer {
 	text-align: center;
 }
 
+.imageBox {
+	border: 2px solid black;
+	border-radius: 25px;
+	max-height: 450px;
+	max-width: 900px;
+	overflow: hidden;	
+}
+
 .flag {
-	height: 500px%;
+	/*height: 500px;*/
 	width: 900px;
 	display: block;
 	margin-left: auto;
@@ -39,7 +81,7 @@ body {
 }
 
 .answerForm {
-	width: 200px;
+	width: 400px;
 	text-align: left;
 	margin-left: auto;
 	margin-right: auto;
@@ -49,17 +91,19 @@ body {
 label {
 	display: block;
 	padding-left: 15px;
-	text-indent: -15px;
+	text-indent: -150px;
+	
 }
 
 .answer {	
 	padding: 0;
-	margin: 0;
-	margin-left: 60px;
+	/*margin: 0;*/
+	margin-left: 250px;
 	vertical-align: bottom;
 	position: relative;
 	top: -1px;
 	overflow: hidden;
+	hover: ;
 }
 
 .submitContainer {
@@ -70,7 +114,31 @@ label {
 	margin: 0 auto;
 }
 
-.feedback h6 {
-	display: inline;
-	padding: .5rem;
+.modal {
+	display: none;
+	position: fixed;
+	z-index: 1;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgba(0,0,0,0.5);
+}
+
+.modal-content {
+	background-color: grey;
+	margin: 15% auto;
+	padding: 5px;
+	width: 100px;
+	height: 75px;
+	border-radius: 25px;
+}
+
+.feedback-inline {
+	display: inline-block;
+}
+
+.feedback h6 {	
+	font-size:1em;
 }
