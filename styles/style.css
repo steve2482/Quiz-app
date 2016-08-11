@@ -1,5 +1,11 @@
-@font-face { font-family: Ferro Rosso; src: url('../FerroRosso.ttf'); }
-@font-face { font-family: Speed; src: url('../speed.ttf'); }
+@font-face {
+	font-family: Ferro Rosso;
+	src: url('FerroRosso.ttf');
+}
+@font-face {
+	font-family: Speed;
+	src: url('speed.ttf');
+}
 
 html, body {
 	height: 100%;
