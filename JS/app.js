@@ -98,9 +98,7 @@ $(document).ready(function () {
   var NewQuiz = Object.create(Quiz);
   var options = NewQuiz.questions[0].options;
 
-  // User Clicks Begin Button, First Question Appears
-
-  $('.beginButton').click(function (event) {
+  function startQuiz() {
     event.preventDefault();
     $('.question').text('What does/could this flag mean to a driver when shown to him during a race?');
     $('.questionNumber').show();
@@ -116,6 +114,29 @@ $(document).ready(function () {
     for(var key in options) {
       $("." + key).text(NewQuiz.questions[NewQuiz.currentQuestion].options[key])
       }
+  }
+
+  
+
+  // User Clicks Begin Button, First Question Appears
+
+  $('.beginButton').click(function (event) {
+    startQuiz();
+    // event.preventDefault();
+    // $('.question').text('What does/could this flag mean to a driver when shown to him during a race?');
+    // $('.questionNumber').show();
+    // $('.imageBox').show();
+    // $('.flag').attr('src', NewQuiz.questions[NewQuiz.currentQuestion].photo);
+    // $('.answerBox').show();
+    // $('.feedback').show();
+    // $('.beginButton').hide();
+    // $('.number').text(NewQuiz.questions[NewQuiz.currentQuestion].id);
+    // $('.numCorrect').text(NewQuiz.correct);
+    // $('.numWrong').text(NewQuiz.incorrect);
+    // $('.flagDescription').text(NewQuiz.questions[NewQuiz.currentQuestion].question);
+    // for(var key in options) {
+    //   $("." + key).text(NewQuiz.questions[NewQuiz.currentQuestion].options[key])
+    //   }
   });
   
   // User Answers Question, Next Apears
@@ -128,13 +149,13 @@ $(document).ready(function () {
       $('.answer-feedback').text("Correct!!")
       NewQuiz.correct++;
     } else if (NewQuiz.currentQuestion == 9 && userInput == NewQuiz.questions[NewQuiz.currentQuestion].options.right) {
-      $('.modal').show();
+      $('.new-modal').show();
       NewQuiz.correct++;
-      $('.answer-feedback').text("Correct! Your final score is a " + NewQuiz.correct / 10 * 100);            
+      $('.answer-feedback').text("Correct! Your final score is a " + NewQuiz.correct / 10 * 100 + " Would you like to try again?");            
     } else if (NewQuiz.currentQuestion == 9) {
-      $('.modal').show();
+      $('.new-modal').show();
       NewQuiz.incorrect++
-      $('.answer-feedback').text("Incorrect, Your final score is a " + NewQuiz.correct / 10 * 100);     
+      $('.answer-feedback').text("Incorrect, Your final score is a " + NewQuiz.correct / 10 * 100 + " Would you like to try again?");    
     } else {
       $('.modal').show();
       NewQuiz.incorrect++;
@@ -142,8 +163,7 @@ $(document).ready(function () {
     }
   });  
     
-  $('.ok-button').click(function(event) {
-    console.log(NewQuiz.currentQuestion)
+  $('.ok-button').click(function(event) {   
     $('.modal').hide();  
     $('.numCorrect').text(NewQuiz.correct);
     $('.numWrong').text(NewQuiz.incorrect);         
@@ -155,6 +175,9 @@ $(document).ready(function () {
       $("." + key).text(NewQuiz.questions[NewQuiz.currentQuestion].options[key]);
     }
     $('.answer').attr('checked', false); 
-    });
-       
+  });
+
+  $('.try-button').click(function() {
+    startQuiz();
+  });       
 });

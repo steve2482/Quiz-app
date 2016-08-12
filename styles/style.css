@@ -34,7 +34,7 @@ body {
 	display: none;
 }
 
-.beginButton, .submitButton, .ok-button {
+.beginButton, .submitButton, .ok-button, .try-button {
 	border-radius: 10px;
 	padding: 10px 20px;
 	background-color: green;
@@ -120,7 +120,7 @@ label {
 	margin: 0 auto;
 }
 
-.modal {
+.modal, .new-modal {
 	display: none;
 	position: fixed;
 	z-index: 1;
