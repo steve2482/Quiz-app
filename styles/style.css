@@ -1,10 +1,10 @@
 @font-face {
 	font-family: Ferro Rosso;
-	src: url('FerroRosso.ttf');
+	src: url('/Quiz-app/fonts/FerroRosso.ttf');
 }
 @font-face {
 	font-family: Speed;
-	src: url('speed.ttf');
+	src: url('/Quiz-app/fonts/speed.ttf');
 }
 
 html, body {
