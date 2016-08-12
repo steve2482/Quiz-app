@@ -1,5 +1,16 @@
+<<<<<<< HEAD
 @font-face { font-family: Ferro Rosso; src: url('/Quiz-app/FerroRosso.ttf'); }
 @font-face { font-family: Speed; src: url('/Quiz-app/speed.ttf'); }
+=======
+@font-face {
+	font-family: Ferro Rosso;
+	src: url('/Quiz-app/fonts/FerroRosso.ttf');
+}
+@font-face {
+	font-family: Speed;
+	src: url('/Quiz-app/fonts/speed.ttf');
+}
+>>>>>>> 79fbc95e7b7a269773b5869f1f8fae1dfb016b65
 
 html, body {
 	height: 100%;
@@ -28,7 +39,7 @@ body {
 	display: none;
 }
 
-.beginButton, .submitButton, .ok-button {
+.beginButton, .submitButton, .ok-button, .try-button {
 	border-radius: 10px;
 	padding: 10px 20px;
 	background-color: green;
@@ -114,7 +125,7 @@ label {
 	margin: 0 auto;
 }
 
-.modal {
+.modal, .new-modal {
 	display: none;
 	position: fixed;
 	z-index: 1;
