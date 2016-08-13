@@ -100,8 +100,7 @@ $(document).ready(function() {
 
 // Start Quiz or Try Again
 
-  function startQuiz(event) {
-    event.preventDefault();
+  function startQuiz() {    
     options = NewQuiz.questions[NewQuiz.currentQuestion].options;
     $('.question').text('What does/could this flag mean to a driver when shown to him during a race?');
     $('.questionNumber').show();
@@ -122,13 +121,13 @@ $(document).ready(function() {
 
   // User Clicks Begin Button, First Question Appears
 
-  $('.beginButton').click(function(event) {
+  $('.beginButton').click(function() {
     startQuiz();
   });
 
   // User Answers Question, Feedback Modal Appears
 
-  $('.submitButton').click(function(event) {
+  $('.submitButton').click(function() {
     var userInput = $('.answer:checked').next('span').text();
     if (NewQuiz.currentQuestion < 9 && userInput === NewQuiz.questions[NewQuiz.currentQuestion].options.right) {
       $('.modal').show();
@@ -151,7 +150,7 @@ $(document).ready(function() {
 
   // User Click OK on Feedback, Next Question Appears
 
-  $('.ok-button').click(function(event) {
+  $('.ok-button').click(function() {
     NewQuiz.currentQuestion++;
     options = NewQuiz.questions[NewQuiz.currentQuestion].options;
     $('.modal').hide();
