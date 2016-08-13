@@ -98,6 +98,8 @@ $(document).ready(function() {
   var NewQuiz = Object.create(Quiz);
   var options;
 
+// Start Quiz or Try Again
+
   function startQuiz(event) {
     event.preventDefault();
     options = NewQuiz.questions[NewQuiz.currentQuestion].options;
