@@ -1,16 +1,5 @@
-<<<<<<< HEAD
 @font-face { font-family: Ferro Rosso; src: url('/Quiz-app/fonts/FerroRosso.ttf'); }
 @font-face { font-family: Speed; src: url('/Quiz-app/fonts/speed.ttf'); }
-=======
-@font-face {
-	font-family: Ferro Rosso;
-	src: url('/Quiz-app/fonts/FerroRosso.ttf');
-}
-@font-face {
-	font-family: Speed;
-	src: url('/Quiz-app/fonts/speed.ttf');
-}
->>>>>>> 79fbc95e7b7a269773b5869f1f8fae1dfb016b65
 
 html, body {
 	height: 100%;
